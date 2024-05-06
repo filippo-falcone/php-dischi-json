@@ -3,10 +3,17 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            discs: []
+            discs: [],
+            isActive: false
         };
     },
     methods: {
+        showDisc() {
+            this.isActive = true;
+        },
+        hideDisc() {
+            this.isActive = false;
+        },
         getDiscFromApi() {
             let apiUrl = 'server.php';
             axios.get(apiUrl).

@@ -1,12 +1,10 @@
 body {
     background-color: #1d2d3c;
-    overflow-y: hidden;
 }
 
 img {
     max-width: 100%;
 }
-
 
 header {
     background-color: #06131f;
@@ -24,8 +22,8 @@ header {
 
 .card-clicked {
     background-color: #112030e8;
-    display: none;
     position: absolute;
+    display: none;
     top: .625rem;
     right: .625rem;
     bottom: .625rem;
