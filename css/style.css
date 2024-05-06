@@ -7,17 +7,18 @@ img {
 }
 
 header {
+    height: 4.25rem;
     background-color: #06131f;
+}
+
+main {
+    height: calc(100dvh - 4.25rem);
 }
 
 .row .card {
     background-color: #112030;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-}
-
-.row .card:hover {
-    transform: scale(1.1);
 }
 
 .card-clicked {
@@ -28,15 +29,12 @@ header {
     right: .625rem;
     bottom: .625rem;
     left: .625rem;
+    z-index: 2;
 }
 
 .card-clicked .card {
     background-color: transparent;
     border: none;
-}
-
-.image-containers {
-    max-width: 50%;
 }
 
 .btn {

@@ -3,7 +3,9 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            apiUrl: 'server.php',
             discs: [],
+            disc: [],
             isActive: false
         };
     },
@@ -14,15 +16,25 @@ createApp({
         hideDisc() {
             this.isActive = false;
         },
-        getDiscFromApi() {
-            let apiUrl = 'server.php';
-            axios.get(apiUrl).
+        getDiscsFromApi() {
+            axios.get(this.apiUrl).
                 then((response) => {
                     this.discs = response.data;
+                });
+        },
+        getDiscFromApi(index) {
+            let queryParams = {
+                disc: index
+            }
+            axios.get(this.apiUrl, {
+                params: queryParams
+            }).
+                then((response) => {
+                    this.disc = response.data;
                 });
         }
     },
     mounted() {
-        this.getDiscFromApi();
+        this.getDiscsFromApi();
     }
 }).mount('#app');

@@ -29,15 +29,15 @@
                 </div>
             </nav>
         </header>
-        <main class="py-4">
-            <div class="container py-4">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center">
-                    <div v-for="disc in discs" class="col" @click="showDisc">
-                        <div class="card align-items-center py-3">
-                            <div class="image-containers">
+        <main>
+            <div class="container py-4 h-100">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center h-100">
+                    <div v-for="disc, index in discs" class="col h-50" @click="showDisc(); getDiscFromApi(index)">
+                        <div class="card align-items-center justify-content-center pt-3 h-100">
+                            <div class="image-containers w-50">
                                 <img :src="disc.poster" class="album-cover" :alt="disc.title">
                             </div>
-                            <div class="card-body text-center text-light">
+                            <div class="card-body d-none d-sm-block text-center text-light flex-grow-0">
                                 <h5 class="card-title">{{ disc.title }}</h5>
                                 <small>{{ disc.author }}</small>
                                 <div>{{ disc.year }}</div>
@@ -51,12 +51,12 @@
                 <div class="col-10 col-sm-5 col-lg-4">
                     <div class="card align-items-center py-3">
                         <div class="image-containers">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" class="album-cover" alt="New Jersey">
+                            <img :src="disc.poster" class="album-cover" :alt="disc.title">
                         </div>
                         <div class="card-body text-center text-light">
-                            <h5 class="card-title">[Titolo]</h5>
-                            <small>[autore]</small>
-                            <div>[anno]</div>
+                            <h5 class="card-title">{{ disc.title }}</h5>
+                            <small>{{ disc.author }}</small>
+                            <div>{{ disc.year }}</div>
                         </div>
                     </div>
                 </div>
