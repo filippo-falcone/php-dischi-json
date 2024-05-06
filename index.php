@@ -14,6 +14,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- /Bootstrap CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- /Bootstrap icons -->
 </head>
 <body>
     <div id="app">
@@ -21,28 +24,45 @@
             <nav class="navbar">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Spotify Logo" width="30" height="24">
+                        <img src="img/spotify_logo.png" alt="Spotify Logo" width="58" height="42">
                     </a>
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="container my-4">
-                <div class="row g-4 justify-content-center">
-                    <div v-for="card in cards" class="col-10 col-sm-5 col-lg-4">
+        <main class="py-4">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center">
+                    <div v-for="disc in discs" class="col">
                         <div class="card align-items-center py-3">
                             <div class="image-containers">
-                                <img :src="card.poster" class="album-cover" :alt="card.title">
+                                <img :src="disc.poster" class="album-cover" :alt="disc.title">
                             </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{ card.title }}</h5>
-                                <small>{{ card.author }}</small>
-                                <div>{{ card.year }}</div>
+                            <div class="card-body d-none d-md-block text-center text-light">
+                                <h5 class="card-title">{{ disc.title }}</h5>
+                                <small>{{ disc.author }}</small>
+                                <div>{{ disc.year }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Card clicked -->
+            <div class="card-clicked justify-content-center align-items-center">
+                <div class="col-10 col-sm-5 col-lg-4">
+                    <div class="card align-items-center py-3">
+                        <div class="image-containers">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" class="album-cover" alt="New Jersey">
+                        </div>
+                        <div class="card-body text-center text-light">
+                            <h5 class="card-title">[Titolo]</h5>
+                            <small>[autore]</small>
+                            <div>[anno]</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline-light"><i class="bi bi-x"></i></button>
+            </div>
+            <!-- /Card clicked -->
         </main>
     </div>
 

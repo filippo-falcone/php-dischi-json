@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            cards: []
+            discs: []
         };
     },
     methods: {
@@ -11,7 +11,7 @@ createApp({
             let apiUrl = 'server.php';
             axios.get(apiUrl).
                 then((response) => {
-                    this.cards = response.data;
+                    this.discs = response.data;
                 });
         }
     },

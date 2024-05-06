@@ -1,7 +1,48 @@
+body {
+    background-color: #1d2d3c;
+    overflow-y: hidden;
+}
+
 img {
     max-width: 100%;
 }
 
+
+header {
+    background-color: #06131f;
+}
+
+.row .card {
+    background-color: #112030;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.row .card:hover {
+    transform: scale(1.1);
+}
+
+.card-clicked {
+    background-color: #112030e8;
+    display: none;
+    position: absolute;
+    top: .625rem;
+    right: .625rem;
+    bottom: .625rem;
+    left: .625rem;
+}
+
+.card-clicked .card {
+    background-color: transparent;
+    border: none;
+}
+
 .image-containers {
-    width: 70%;
+    max-width: 50%;
+}
+
+.btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
