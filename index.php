@@ -29,15 +29,15 @@
         <main>
             <div class="container my-4">
                 <div class="row g-4 justify-content-center">
-                    <div class="col-10 col-sm-5 col-lg-4">
+                    <div v-for="card in cards" class="col-10 col-sm-5 col-lg-4">
                         <div class="card align-items-center py-3">
                             <div class="image-containers">
-                                <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" class="album-cover" alt="...">
+                                <img :src="card.poster" class="album-cover" :alt="card.title">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title">[Title]</h5>
-                                <small>[artist]</small>
-                                <div>[years]</div>
+                                <h5 class="card-title">{{ card.title }}</h5>
+                                <small>{{ card.author }}</small>
+                                <div>{{ card.year }}</div>
                             </div>
                         </div>
                     </div>
