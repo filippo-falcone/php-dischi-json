@@ -2,7 +2,20 @@ const { createApp } = Vue;
 
 createApp({
     data() {
-        return {};
+        return {
+            cards: []
+        };
     },
-    methods: {}
+    methods: {
+        getDiscFromApi() {
+            let apiUrl = 'server.php';
+            axios.get(apiUrl).
+                then((response) => {
+                    this.cards = response.data;
+                });
+        }
+    },
+    mounted() {
+        this.getDiscFromApi();
+    }
 }).mount('#app');
