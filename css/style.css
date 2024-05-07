@@ -23,7 +23,7 @@ main {
 
 .card-clicked {
     background-color: #112030e8;
-    position: absolute;
+    position: fixed;
     display: none;
     top: .625rem;
     right: .625rem;
