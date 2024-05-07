@@ -11,7 +11,7 @@
 // }
 
 $discsJson = file_get_contents('discs.json');
-$discs = json_decode($discsJson);
+$discs = json_decode($discsJson, true);
 
 /* response */
 $response = $discs;
